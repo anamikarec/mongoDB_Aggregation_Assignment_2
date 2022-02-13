@@ -1,0 +1,32 @@
+[
+    {
+        "order_id" :  1,
+        "city" : "Kanpur",
+        "email" : "kanpur@gmail.com"
+    },
+    {
+        "order_id" :  1,
+        "city" : "Kanpur",
+        "email" : "a@gmail.com"
+    },
+    {
+        "order_id" :  1,
+        "city" : "Delhi",
+        "email" : "b@gmail.com"
+    },
+    {
+        "order_id" :  1,
+        "city" : "Kanpur",
+        "email" : "kanpur@gmail.com"
+    },
+    {
+        "order_id" :  1,
+        "city" : "Chennai",
+        "email" : "a@gmail.com"
+    },
+    {
+        "order_id" :  1,
+        "city" : "Kanpur",
+        "email" : "c@gmail.com"
+    }
+]

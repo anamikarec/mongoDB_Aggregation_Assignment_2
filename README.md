@@ -34,10 +34,10 @@
 ```
 - use aggregations and try to solve this
 3. 
-- you have a set of data in a collection in the following manner ```
+- you have a set of data in a collection in the following manner
 - city
 - email
-- order_id ```
+- order_id
 - there can be duplicate emails
 - you need to filter out the total no of unique emails on each city
 - you can use aggregation for this
@@ -48,3 +48,38 @@
 - all categories
 - products: sku, id, item, qty, price with category information
 - orders collection with: containing information of user, and purchases made, and all required values, transaction details
+
+1. 
+1. 1. 
+```js
+     db.movie.aggregate( [ { $match: { rating: { $gte: 8 } }}])
+```
+
+1. 2. 
+```js
+    db.movie.aggregate( [ { $match: { genres: { $nin: ['Thriller','Romance'] } }}])
+```
+
+1. 3. 
+```js
+   db.movie.aggregate([{$match:{rated:'PG'}}])
+```
+
+1. 4. 
+```js
+    db.movie.aggregate([{$match:{language : {$in : ['French','English']}}},{$project : {language:1,_id:0}}])
+```
+
+1. 5. 
+```js
+     db.movie.aggregate([{$match:{production_year : {$gt : 2012}}},{$project : {production_year:1,_id:0}}])
+```
+
+2.  
+```js
+   db.newuser.aggregate([{$match : {}},{$group : {_id : '$name',duplicates : {$sum:1}}}])  
+```
+3. 
+```js
+    db.city.aggregate([{$group : {_id:'$email',occurence:{$sum : 1}}},{$match : {_id : {$ne : null},'occurence':{$eq:1}}},{$project:{_id : 0,email :'$_id',uniqueFoundMail : '$occurence'}}])
+```
